@@ -1,54 +1,68 @@
+const taskInput = document.querySelector(".task-input"),
+filters = document.querySelectorAll(".filters span")
+clearAll = document.querySelector(".clear-all"),
+taskList = document.querySelector("ul.list-items");
+
+let editId,
+isEditTask = false,
+toDos = JSON.parse(localStorage.getItem("todo-list"));
+
+
+// click to close warning alert
+let closebtn = document.querySelector(".close-btn");
+closebtn.addEventListener("click", function() {
+  let div = this.parentElement;
+  // div.style.opacity = "0";
+  setTimeout(function() {div.style.display = "none";}, 600);
+});
+
+
 // Create a "close" button and append it to each list item
 const myNodelist = document.getElementsByTagName("LI");
-var i;
+let i;
 for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
 
 
-
-
-
-
 // Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
+let close = document.getElementsByClassName("close");
+let j ;
+for (j = 0; j < close.length; j++) {
+  close[j].onclick = function() {
+    let div = this.parentElement;
     div.style.display = "none";
   }
 }
 
 // Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
+taskList.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
 }, false);
 
 // Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
+let addBtn = document.querySelector(".add-btn");
+addBtn.addEventListener("click", function() {
+  let li = document.createElement("li");
+  let inputValue = taskInput.value;
+  let t = document.createTextNode(inputValue);
   let warning = document.querySelector(".warning");
   li.appendChild(t);
-  if (inputValue === '') {
-    // alert("You must write something!");
+  if (inputValue === "") {
     warning.style.display = "block";
   } else {
-    document.getElementById("myUL").appendChild(li);
+    taskList.appendChild(li);
   }
-  document.getElementById("myInput").value = "";
+  document.querySelector(".task-input").value = "";
 
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
@@ -59,4 +73,4 @@ function newElement() {
       div.style.display = "none";
     }
   }
-}
+});

@@ -10,28 +10,34 @@
 <body>
     <div class="wrapper">
         <div class="warning" style="display: none;">
-            <span class="closebtn">&times;</span>
+            <span class="close-btn">&times;</span>
             <p>You must write something!</p>
         </div>
-        <div id="myDIV" class="header">
+        <div class="header">
             <h2>My To Do List</h2>
-            <input type="text" id="myInput" placeholder="I want to...">
-            <span onclick="newElement()" class="addBtn">Add</span>
+            <input type="text" class="task-input" id="myInput" placeholder="I want to...">
+            <span class="add-btn btn">Add</span>
         </div>
-        
-        <!-- <div class="empty-state">
+        <div class="controls">
+            <div class="filters">
+                <span class="active" id="all">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+            </div>
+            <span class="clear-btn btn">Clear all</span>
+        </div>
+        <div class="empty-state" style="display: none;">
             <p>No items here</p>
-        </div> -->
-       <div class="list-items">
-            <ul id="myUL">
-                <li>Hit the gym</li>
-                <li class="checked">Pay bills</li>
-                <li>Meet George</li>
-                <li>Buy eggs</li>
-                <li>Read a book</li>
-                <li>Organize office</li>
-            </ul>
-       </div>
+        </div>
+      
+        <ul id="myUL" class="list-items">
+            <li>Hit the gym</li>
+            <li class="checked">Pay bills</li>
+            <li>Meet George</li>
+            <li>Buy eggs</li>
+            <li>Read a book</li>
+            <li>Organize office</li>
+        </ul>
     </div>
     
 <script src="js/script.js"></script> 
