@@ -3,11 +3,6 @@ filters = document.querySelectorAll(".filters span")
 clearAll = document.querySelector(".clear-all"),
 taskList = document.querySelector("ul.list-items");
 
-let editId,
-isEditTask = false,
-toDos = JSON.parse(localStorage.getItem("todo-list"));
-
-
 // click to close warning alert
 let closebtn = document.querySelector(".close-btn");
 closebtn.addEventListener("click", function() {
@@ -21,11 +16,11 @@ closebtn.addEventListener("click", function() {
 const myNodelist = document.getElementsByTagName("LI");
 let i;
 for (i = 0; i < myNodelist.length; i++) {
-  let span = document.createElement("SPAN");
+  let removeSpan = document.createElement("SPAN");
   let txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
+  removeSpan.className = "close";
+  removeSpan.appendChild(txt);
+  myNodelist[i].appendChild(removeSpan);
 }
 
 

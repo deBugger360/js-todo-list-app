@@ -1,45 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-DO List</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+  </head>
+  <body>
     <div class="wrapper">
-        <div class="warning" style="display: none;">
-            <span class="close-btn">&times;</span>
-            <p>You must write something!</p>
-        </div>
-        <div class="header">
-            <h2>My To Do List</h2>
-            <input type="text" class="task-input" id="myInput" placeholder="I want to...">
-            <span class="add-btn btn">Add</span>
-        </div>
-        <div class="controls">
-            <div class="filters">
-                <span class="active" id="all">All</span>
-                <span id="pending">Pending</span>
-                <span id="completed">Completed</span>
-            </div>
-            <span class="clear-btn btn">Clear all</span>
-        </div>
-        <div class="empty-state" style="display: none;">
-            <p>No items here</p>
-        </div>
-      
-        <ul id="myUL" class="list-items">
+      <div class="warning" style="display: none">
+        <span class="close-btn">&times;</span>
+        <p>You must write something!</p>
+      </div>
+      <div class="header">
+        <h2>My To Do List</h2>
+        <input type="text" class="task-input" id="myInput" placeholder="I want to..." />
+        <span class="add-btn btn">Add</span>
+      </div>
+      <ul id="myUL" class="list-items">
             <li>Hit the gym</li>
             <li class="checked">Pay bills</li>
             <li>Meet George</li>
             <li>Buy eggs</li>
             <li>Read a book</li>
             <li>Organize office</li>
-        </ul>
+      </ul>
     </div>
-    
-<script src="js/script.js"></script> 
-</body>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
